@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --pokeball-red: rgb(182, 38, 38);
+}
+
+html {
+    font-size: 18px;
+}
+
+html, body {
+    min-height: 100dvh;
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+body, input, button, select, option, textarea {
+    font-family: monospace;
+}
+
+body {
+    background-image: url("/img/bg.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    background: white;
+    padding: 2rem;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.4);
+    border: 1px solid lightgray;
+    border-radius: 1.5rem;
+    width: 1000px;
+    min-height: 80dvh;
+    max-height: 95dvh;
+    margin: auto;
+    max-width: 95dvw;
+    overflow-y: auto;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+button {
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: var(--pokeball-red);
+    color: white;
+    cursor: pointer;
+    border: 0;
+    transition: 100ms;
+
+    &:hover {
+        filter: brightness(1.2);
+    }
+}
+
+select {
+    background-color: var(--pokeball-red);
+    color: white;
+    border: 0;
+    padding: .5rem;
+    border-radius: .5rem;
+    transition: 100ms;
+    cursor: pointer;
+
+    &:hover {
+        filter: brightness(1.2);
+    }
+}
+
+select, option {
+    font-size: 18px;
+}
+
+#ui {
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 15px;
+
+}
+
+.types {
+    display: flex;
+    gap: 4px;
+}
+
+div[class^="type-badge"] {
+    color: white;
+    text-shadow: 1px 1px 0px black;
+    padding: 4px;
+    border-radius: 4px;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.type-badge_normal {
+    background-color: gray;
+}
+
+.type-badge_fire {
+    background-color: orangered;
+}
+
+.type-badge_water {
+    background-color: rgb(66, 142, 255);
+}
+
+.type-badge_electric {
+    background-color: rgb(240, 218, 22);
+}
+
+.type-badge_grass {
+    background-color: rgb(18, 165, 18);
+}
+
+.type-badge_ice {
+    background-color: rgb(67, 255, 255);
+}
+
+.type-badge_fighting {
+    background-color: rgb(159, 61, 31);
+}
+
+.type-badge_poison {
+    background-color: rgb(146, 73, 146);
+}
+
+.type-badge_ground {
+    background-color: rgb(224, 201, 114);
+}
+
+.type-badge_flying {
+    background-color: rgb(115, 163, 209);
+}
+
+.type-badge_psychic {
+    background-color: rgb(247, 68, 163);
+}
+
+.type-badge_bug {
+    background-color: rgb(197, 211, 69);
+}
+
+.type-badge_rock {
+    background-color: rgb(150, 116, 87);
+}
+
+.type-badge_ghost {
+    background-color: rgb(119, 94, 132);
+}
+
+.type-badge_dragon {
+    background-color: rgb(128, 86, 255);
+}
+
+.type-badge_dark {
+    background-color: rgb(42, 42, 42);
+}
+
+.type-badge_steel {
+    background-color: rgb(192, 192, 192);
+}
+
+.type-badge_fairy {
+    background-color: rgb(255, 175, 188);
+}
+
+#pokemon-info {
+    border-collapse: collapse;
+    width: 100%;
+
+    & td, th {
+        padding: 8px;
+        border: 1px solid lightgray;
+    }
+
+    & > tbody > tr > th {
+        background-color: var(--pokeball-red);
+        color: white;
+        text-align: left;
+    }
+}
+
+#pokemon-images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 1rem;
+}
+
+#pokemon-images > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+    padding: 1rem;
+
+    & p {
+        text-align: center;
+    }
+}
+
+.prev-next {
+    padding: 1rem 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.random-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    & button {
+        color: var(--pokeball-red);
+        background-color: white;
+        border: 1px solid var(--pokeball-red);
+
+        &:hover {
+            background-color: var(--pokeball-red);
+            color: white;
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    #ui {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .random-btns {
+        display: none;
+    }
+
+    #menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #pokemon-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    #menu {
+        flex-direction: column;
+    }
+}
